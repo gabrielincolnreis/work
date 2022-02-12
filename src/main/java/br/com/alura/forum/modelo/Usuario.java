@@ -18,10 +18,21 @@ public class Usuario implements UserDetails {
 	private String email;
 	private String profession;
 	private String senha;
+	private Long rating;
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Perfil> perfis = new ArrayList<>();
 
+	public Usuario(){
+
+	}
+
+	public Usuario(String nome, String email, String profession, String senha) {
+		this.nome = nome;
+		this.email = email;
+		this.profession = profession;
+		this.senha = senha;
+	}
 
 	@Override
 	public int hashCode() {
@@ -78,6 +89,22 @@ public class Usuario implements UserDetails {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getProfession() {
+		return profession;
+	}
+
+	public void setProfession(String profession) {
+		this.profession = profession;
+	}
+
+	public Long getRating() {
+		return rating;
+	}
+
+	public void setRating(Long rating) {
+		this.rating = rating;
 	}
 
 	@Override
