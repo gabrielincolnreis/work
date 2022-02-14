@@ -19,7 +19,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
-@Profile("prod")
+@Profile(value = {"prod", "test"})
 public class AutenticacaoController {
 
     @Autowired
@@ -34,7 +34,7 @@ public class AutenticacaoController {
 
         try{
             Authentication authentication =  authenticationManager.authenticate(dadosLogin);
-            String token = tokenService.gerarTolken(authentication);
+            String token = tokenService.gerarToken(authentication);
 
             return ResponseEntity.ok(new TokenDto(token, "Bearer"));
 
