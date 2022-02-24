@@ -3,6 +3,7 @@ package br.com.alura.forum.modelo;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 public class Address {
@@ -22,17 +23,20 @@ public class Address {
     @OneToOne
     private Usuario owner;
 
-
     public Address() {
     }
 
-    public Address(String country, String city, String street, Long addressCode, Usuario owner) {
+    public Address(String country, String city, String street, Long number, String ville, Long addressCode, String complement, Usuario owner) {
         this.country = country;
         this.city = city;
         this.street = street;
+        this.number = number;
+        this.ville = ville;
         this.addressCode = addressCode;
+        this.complement = complement;
         this.owner = owner;
     }
+
 
     public Long getId() {
         return id;

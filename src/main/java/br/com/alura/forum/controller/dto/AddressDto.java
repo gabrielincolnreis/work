@@ -29,6 +29,7 @@ public class AddressDto {
         this.complement = address.getComplement();
         this.owner = new UserDto(address.getOwner());
     }
+
     public static Page<AddressDto> converter(Page<Address> addresses){
         return addresses.map(AddressDto::new);
     }
