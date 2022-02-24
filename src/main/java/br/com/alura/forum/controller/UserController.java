@@ -1,13 +1,10 @@
 package br.com.alura.forum.controller;
 
-import br.com.alura.forum.controller.dto.DetalhesDoTopicoDto;
 import br.com.alura.forum.controller.dto.UserDto;
 import br.com.alura.forum.controller.form.UpdateUserForm;
 import br.com.alura.forum.controller.form.UserForm;
 import br.com.alura.forum.modelo.Usuario;
 import br.com.alura.forum.repository.UsuarioRepository;
-import io.swagger.models.Response;
-import org.h2.engine.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
